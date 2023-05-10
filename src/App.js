@@ -1,52 +1,80 @@
 import React from 'react';
-import './App.css';
 import Button from "./components/Button";
-import bag_one from './assets/bag_1.png';
-import bag_two from './assets/bag_2.png';
-import bag_three from './assets/bag_3.png';
-import bag_four from './assets/bag_4.png';
+import Product from "./components/Product";
+import Tile from "./components/Tile";
+import bag1 from "./assets/bag_1.png";
+import bag2 from "./assets/bag_2.png";
+import bag3 from "./assets/bag_3.png";
+import bag4 from "./assets/bag_4.png";
+import brand from './assets/brand.png';
+import our_story from './assets/our_story.png';
+import './App.css';
 
 function App() {
   return (
       <>
       <h1>Handbags & Purses</h1>
       <nav>
-          <Button buttonType="button" clickHandler={() => console.log("to the collection")} isDisabled={false}>
-              To the collection
+          <Button type="button"
+                  clickHandler={() => console.log("to the collection")}
+                  isDisabled={false}>
+                    To the collection
               </Button>
-          <Button buttonType="button" clickHandler={() => console.log("shop all bags")} isDisabled={false}>
-              Shop all bags
+          <Button type="button"
+                  clickHandler={() => console.log("shop all bags")}
+                  isDisabled={false}>
+                    Shop all bags
               </Button>
-          <Button buttonType="button" clickHandler={() => console.log("pre-order")} isDisabled={true}>
-              Pre-order</Button>
+          <Button type="button"
+                  clickHandler={() => console.log("pre-order")}
+                  isDisabled={true}>
+                    Pre-order
+          </Button>
       </nav>
           <main>
-              <article>
-                  <span>Best seller</span>
-                  <img src="./assets/bag_1.png" alt="handy bag"/>
-                  <p>The handy bag</p>
-                  <h4>€400</h4>
-              </article>
-              <article>
-                <span>Best seller</span>
-                <img src="./assets/bag_2.png" alt="stylish bag"/>
-                <p>The stylish bag</p>
-                <h4>€250</h4>
-              </article>
-              <article>
-                <span>New collection</span>
-                <img src="./assets/bag_3.png" alt="simple bag"/>
-                <p>The simple bag</p>
-                <h4>€300</h4>
-              </article>
-              <article>
-                  <span>New collection</span>
-                  <img src="./assets/bag_4.png" alt="trendy bag"/>
-                  <p>The trendy bag</p>
-                  <h4>€150</h4>
-              </article>
-
+              <Product
+                  label="Best seller"
+                  img={bag1}
+                  title="The handy bag"
+                  price={400}
+              />
+              <Product
+                  label="Best seller"
+                  img={bag2}
+                  title="The stylish bag"
+                  price={250}
+              />
+              <Product
+                  label="New collection"
+                  img={bag3}
+                  title="The simple bag"
+                  price={300}
+              />
+              <Product
+                  label="New collection"
+                  img={bag4}
+                  title="The trendy bag"
+                  price={150}
+              />
           </main>
+          <footer>
+              <Tile
+                  title="The Brand">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus cupiditate enim eveniet inventore praesentium quidem quisquam reprehenderit tempora unde. Dolor!</p>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate eos illo incidunt iusto maiores nam perferendis quod saepe sapiente tenetur.</p>
+              </Tile>
+              <Tile
+                  img={brand}
+                  imgDescription="the brand logo"
+              />
+              <Tile img={our_story}
+                    imgDescription="the designers"
+              />
+              <Tile
+                  title="Our Story">
+                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, assumenda debitis eaque enim, expedita magni maxime quisquam reiciendis, sit soluta tempore ut! Animi assumenda at cum deserunt doloremque nesciunt quibusdam?</p>
+              </Tile>
+          </footer>
       </>
   );
 }

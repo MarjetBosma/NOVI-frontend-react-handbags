@@ -3,7 +3,7 @@ import React from "react";
 function Button({ clickHandler, isDisabled, children }) {
     return (
      <button
-         buttonType="button"
+         type="button"
          onClick={clickHandler}
          disabled={isDisabled}
          >
